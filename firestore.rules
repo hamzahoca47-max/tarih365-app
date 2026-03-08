@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    // Collection: appData
+    // Document ID: main
+    // Fields:
+    //   - siniflar: map (required)
+    //   - sorular: map (required)
+    //   - carkSorular: list (optional)
+    //   - carkSinifSorular: map (optional)
+    //   - skorlar: map (required)
+    //   - eglenceSorular: map (optional)
+    //   - iyikiVarSorular: map (optional)
+    // ===============================================================
+
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isSuperAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.email == "hamzagoktepe@gmail.com" && request.auth.token.email_verified == true);
+    }
+
+    // Global Soru Havuzu
+    match /global/questions {
+      allow read: if true;
+      allow write: if isSuperAdmin();
+    }
+
+    // Okul Şifresi ile paylaşılan sınıflar
+    match /schools/{pin} {
+      allow read: if true;
+      allow write: if isSuperAdmin() || isAuthenticated();
+    }
+
+    // Her öğretmen kendi sınıf ve skor verisini yönetir
+    match /teachers/{teacherId}/data/main {
+      allow read, write: if isOwner(teacherId) || isSuperAdmin();
+    }
+
+    // Alternatif olarak tüm alt yolları kapsayan kural (daha esnek)
+    match /teachers/{teacherId}/data/{allPaths=**} {
+      allow read, write: if isOwner(teacherId) || isSuperAdmin();
+    }
+
+    match /{path=**} {
+      allow read, write: if false;
+    }
+  }
+}

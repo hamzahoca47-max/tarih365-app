@@ -1,0 +1,61 @@
+{
+  "siniflar": {
+    "MİSAFİR": [
+      "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+      "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+      "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
+      "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"
+    ]
+  },
+  "sorular": {
+    "9": {
+      "1": [
+        { "c": "TARİH", "s": "Geçmişteki olayları yer ve zaman göstererek, sebep-sonuç ilişkisi içinde inceleyen bilim dalı." },
+        { "c": "KRONOLOJİ", "s": "Olayların zaman içindeki sıralanışını inceleyen bilim dalı." }
+      ]
+    },
+    "10": {
+      "1": [
+        { "c": "MALAZGİRT", "s": "1071 yılında Anadolu'nun kapılarının Türklere açıldığı savaş." }
+      ]
+    },
+    "11": {
+      "1": [
+        { "c": "WESTPHALIA", "s": "Modern devletler hukukunun temeli sayılan 1648 tarihli antlaşma." }
+      ]
+    },
+    "11-tkm": {
+      "1": [
+        { "c": "KURULTAY", "s": "Eski Türklerde devlet işlerinin görüşülüp karara bağlandığı meclis." },
+        { "c": "KUT", "s": "Eski Türklerde devleti yönetme yetkisinin Tanrı tarafından verildiğine inanılan anlayış." }
+      ]
+    },
+    "12": {
+      "1": [
+        { "c": "SELANİK", "s": "Mustafa Kemal’in 1881 yılında dünyaya geldiği şehir." },
+        { "c": "KEMAL", "s": "Matematik öğretmeni tarafından Mustafa'ya verilen isim." }
+      ]
+    },
+    "12-cagdas": {
+      "1": [
+        { "c": "NATO", "s": "Kuzey Atlantik Antlaşması Örgütü'nün kısa adı." }
+      ]
+    }
+  },
+  "carkSorular": [
+    { "id": 1, "q": "Türkiye Cumhuriyeti'nin kurucusu kimdir?", "a": "Mustafa Kemal Atatürk" },
+    { "id": 2, "q": "İstiklal Marşı'nın yazarı kimdir?", "a": "Mehmet Akif Ersoy" }
+  ],
+  "carkSinifSorular": {
+    "9": { "1": [{ "id": 901, "q": "Tarih biliminin konusu nedir?", "a": "İnsan faaliyetleri" }] },
+    "10": { "1": [{ "id": 1001, "q": "Osmanlı Devleti hangi yıl kurulmuştur?", "a": "1299" }] },
+    "11": { "1": [{ "id": 1101, "q": "Fransız İhtilali hangi yıl gerçekleşmiştir?", "a": "1789" }] },
+    "11-tkm": { "1": [{ "id": 1102, "q": "Eski Türklerde meclise ne ad verilirdi?", "a": "Kurultay" }] },
+    "12": { "1": [{ "id": 1201, "q": "Atatürk'ün doğum yılı kaçtır?", "a": "1881" }] },
+    "12-cagdas": { "1": [{ "id": 1202, "q": "İkinci Dünya Savaşı hangi yıllar arasında olmuştur?", "a": "1939-1945" }] }
+  },
+  "skorlar": {},
+  "settings": {
+    "youtubeUrl": "https://youtube.com/@hamzahoca"
+  }
+}

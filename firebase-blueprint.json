@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "AppData": {
+      "title": "AppData",
+      "description": "Uygulamanın tüm verilerini içeren ana yapı",
+      "type": "object",
+      "properties": {
+        "siniflar": {
+          "type": "object",
+          "description": "Sınıf isimleri ve öğrenci listeleri"
+        },
+        "sorular": {
+          "type": "object",
+          "description": "Sınıf ve ünitelere göre sorular"
+        },
+        "carkSorular": {
+          "type": "array",
+          "description": "Genel çark soruları"
+        },
+        "carkSinifSorular": {
+          "type": "object",
+          "description": "Sınıf ve ünitelere göre çark soruları"
+        },
+        "skorlar": {
+          "type": "object",
+          "description": "Öğrenci skorları"
+        },
+        "eglenceSorular": {
+          "type": "object",
+          "description": "Eğlence oyunları soruları"
+        },
+        "iyikiVarSorular": {
+          "type": "object",
+          "description": "İyiki Var oyunu soruları"
+        }
+      },
+      "required": ["siniflar", "sorular", "skorlar"]
+    }
+  },
+  "firestore": {
+    "/teachers/{teacherId}/data/main": {
+      "schema": "AppData",
+      "description": "Her öğretmenin kendine özel sınıf, soru ve skor verileri"
+    },
+    "/global/questions": {
+      "schema": "AppData",
+      "description": "Tüm öğretmenlerin erişebildiği ortak soru havuzu"
+    }
+  }
+}

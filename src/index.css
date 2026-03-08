@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #c9a84c;
+  --color-gold-light: #f0d080;
+  --color-gold-dark: #8a6a1a;
+  --color-deep: #0d0b07;
+  --color-parchment: #f5e9cc;
+  --color-crimson: #8b1a1a;
+  --color-crimson-light: #c0392b;
+  --color-teal: #1a6b6b;
+  --color-teal-light: #1abc9c;
+  --color-slate: #1c2a3a;
+  --color-slate-light: #2c3e50;
+  --color-text-light: #e8dcc8;
+  --color-text-dark: #2a1f0a;
+  
+  --font-sans: 'Crimson Pro', Georgia, serif;
+  --font-serif: 'Cinzel', serif;
+}
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background-color: var(--color-deep);
+  color: var(--color-text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+.bg-ornate {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(201,168,76,.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(139,26,26,.08) 0%, transparent 60%),
+    linear-gradient(160deg, #0d0b07 0%, #1a1208 50%, #0d0b07 100%);
+  position: relative;
+}
+
+.bg-ornate::before {
+  content:'';
+  position:fixed; inset:0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,168,76,.03) 40px, rgba(201,168,76,.03) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,168,76,.03) 40px, rgba(201,168,76,.03) 41px);
+  pointer-events:none; z-index:0;
+}
+
+.title-grand {
+  font-family: 'Cinzel', serif;
+  color: var(--color-gold);
+  text-shadow: 0 0 40px rgba(201,168,76,.4), 0 2px 4px rgba(0,0,0,.8);
+  letter-spacing: .1em;
+}
+
+.title-divider {
+  width: 200px; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 12px auto;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  color: var(--color-text-dark);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid var(--color-gold-light);
+  box-shadow: 0 4px 12px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.2);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  transition: all .15s;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(201,168,76,.3);
+}
+
+.btn-gold:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-crimson {
+  background: linear-gradient(135deg, #5a0d0d 0%, var(--color-crimson) 50%, #5a0d0d 100%);
+  color: var(--color-text-light);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid var(--color-crimson);
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  letter-spacing: .05em;
+  transition: all .15s;
+}
+
+.btn-crimson:hover:not(:disabled) {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.btn-crimson:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.btn-teal {
+  background: linear-gradient(135deg, #0d3333 0%, var(--color-teal) 50%, #0d3333 100%);
+  color: var(--color-text-light);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid var(--color-teal-light);
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  transition: all .15s;
+}
+
+.btn-teal:hover:not(:disabled) {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+.btn-teal:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.back-nav {
+  background: none;
+  border: 1px solid rgba(201,168,76,.2);
+  color: rgba(232,220,200,.6);
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'Cinzel', serif;
+  margin-top: 16px;
+  letter-spacing: .05em;
+  transition: all .15s;
+  cursor: pointer;
+}
+
+.back-nav:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,.3); }
+::-webkit-scrollbar-thumb { background: var(--color-gold-dark); border-radius: 3px; }
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
